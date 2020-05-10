@@ -59,7 +59,17 @@
             }
         },
         mailru: {
-            window.open('mailto:atharvanj@gmail.com', '_blank');
+            counterUrl: protocol + '//connect.mail.ru/share_count?url_list={url}&callback=1&func=?',
+            convertNumber: function(data) {
+                for (var url in data) {
+                    if (data.hasOwnProperty(url)) {
+                        return data[url].shares;
+                    }
+                }
+            },
+            popupUrl: protocol + '//connect.mail.ru/share?share_url={url}&title={title}',
+            popupWidth: 550,
+            popupHeight: 360
         },
         vkontakte: {
             counterUrl: 'https://vk.com/share.php?act=count&url={url}&index={index}',
