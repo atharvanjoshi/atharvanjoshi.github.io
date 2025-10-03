@@ -1,184 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="d3.min.js"></script>
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-.menu-toggler {
-  position: fixed;
-  display: block;
-  top:0;
-  bottom:0;
-  right:0;
-  left:0;
-  margin:auto;
-  width:40px;
-  height:40px;
-  z-index:2;
-  opacity:0;
-  cursor:pointer;
-}
-.menu-toggler:hover + label,
-.menu-toggler:hover + label:before,
-.menu-toggler:hover + label:after,{
-  background: white;
-}
-.menu-toggler:checked + label {
-  background: transparent;
-}
-.menu-toggler:checked + label:before,
-.menu-toggler:checked + label:after,{
-  top:0;
-  width:40px;
-  transform-origin: 50% 50%;
-}
-.menu-toggler:checked + label:before {
-  transform: rotate(45deg) translateY(-15px) translateX(-15px);
-}
-.menu-toggler:checked + label:after {
-  transform: rotate(-45deg);
-}
-.menu-toggler:checked ~ ul .menu-item { 
-  opacity: 1;
-}
-
-.menu-toggler:checked ~ ul .menu-item:nth-child(1) {
-  transform:rotate(-1deg) translateY(350px) rotate(-60deg);
-}
-.menu-toggler:checked ~ ul .menu-item:nth-child(2) {
-  transform: rotate(-1deg) translateY(250px) rotate(-60deg);
-}
-.menu-toggler:checked ~ ul .menu-item:nth-child(3) {
-  transform: rotate(-1deg) translateY(150px) rotate(-60deg);
-}
-.menu-toggler:checked ~ ul .menu-item a {
-  pointer-events:auto;
-}
-.menu-toggler + label {
-  width: 40px;
-  height: 5px;
-  display: block;
-  z-index: 1;
-  border-radius: 2.5px;
-  background: rgba(230, 239, 250, 0.9);
-  transition: transform 0.5s top 0.5s;
-  position: absolute;
-  display: block;
-  top: 20px;
-  bottom: 700px;
-  left: 1450px;
-  right: 10px;
-  margin: auto;
-}
-.menu-toggler + label:before,
-.menu-toggler + label:after {
-  width: 40px;
-  height: 5px;
-  display: block;
-  z-index: 1;
-  border-radius: 2.5px;
-  background: rgba(255, 255, 255, 0.7);
-  transition: transform 0.5s top 0.5s;
-  content: "";
-  position: fixed;
-  display: block;
-  left: 1450;
-}
-.menu-toggler + label:before {
-  top: 10px;
-}
-.menu-toggler + label:after {
-  top: -10px;
-}
-.menu-item:nth-child(1) a {
-  transform: rotate(60deg);
-}
-.menu-item:nth-child(2) a {
-  transform: rotate(60deg);
-}
-.menu-item:nth-child(3) a {
-  transform: rotate(60deg);
-}
-.menu-item {
-  position: fixed;
-  display: block;
-  top: 10px;
-  bottom: 500px;
-  left: 1400px;
-  right: 50px;
-  margin: auto;
-  width: 80px;
-  height: 80px;
-  opacity: 0;
-  transition: 0.5s;
-}
-.menu-item a {
-  display: block;
-  width: inherit;
-  height: inherit;
-  line-height: 80px;
-  color: rgba(255, 255, 255, 0.7);
-  background: rgba(1, 1, 1, 0.7);
-  border-radius: 50%;
-  text-align: center;
-  text-decoration: none;
-  font-size: 40px;
-  pointer-events: none;
-  transition: 0.2s;
-}
-.menu-item a:hover {
-  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
-  color: rgb(106, 105, 105);
-  background: rgba(255, 255, 255, 0.3);
-  font-size: 44.44px
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Scientist Portfolio</title>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body id='body2'>
+<body data-theme="dark">
+    <!-- Animated Background -->
+    <div class="bg-animation" id="bgAnimation"></div>
 
-<nav class="menu">
-  <input checked="checked" class="menu-toggler" type="checkbox">
-  <ul>
-    </li>
-    <li class="menu-item">
-      <a class="fa fa-envelope" href="#"></a>
-    </li>
-    <li class="menu-item">
-      <a class ="fa fa-linkedin" href="#"></a>
-    </li>
-    <li class="menu-item">
-      <a class="fa fa-github" href="#"></a>
-    </li>
-  </ul>
-</nav>
-<p>Hello</p>
-<p>Hello</p>
-<p>Hello</p>
-<p>Hello</p>
-<p>Hello</p>
-<p>Hello</p>
-<p>Hello</p>
-<p>Hello</p>
-<p>Hello</p>
-<p>Hello</p>
-<p>Hello</p>
-<p>Hello</p>
-<p>Hello</p>
-<p>Hello</p>
-<p>Hello</p>
-<p>Hello</p>
-<p>Hello</p>
-<p>Hello</p>
-<p>Hello</p>
-<p>Hello</p><p>Hello</p>
-<p>Hello</p>
-<p>Hello</p>
-<p>Hello</p>
-<p>Hello</p>
-<p>Hello</p>
-<p>Hello</p>
-<p>Hello</p><p>Hello</p>
+    <!-- Header -->
+    <div class="header">
+        <div class="logo">Atharva Niranjan Joshi</div>
+        <button class="theme-toggle" id="themeToggle">🌙 Dark</button>
+    </div>
+
+    <div class="container">
+        <!-- Title Card -->
+        <div class="card title-card">
+            <h1>Atharva Joshi</h1>
+            <h2>Senior Data Scientist</h2>
+            <p>📍 London, UK</p>
+        </div>
+
+        <!-- About Me Card -->
+        <div class="card about-card">
+            <div class="avatar">👨‍💻</div>
+            <div>
+                <h2>About Me</h2>
+                <p>Passionate Data Scientist with 5+ years of experience in machine learning, statistical analysis, and data visualization. I specialize in transforming complex datasets into actionable business insights and building predictive models that drive decision-making.</p>
+                
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <strong>🐍 Python</strong>
+                        <p>Advanced</p>
+                    </div>
+                    <div class="skill-item">
+                        <strong>🤖 Machine Learning</strong>
+                        <p>Expert</p>
+                    </div>
+                    <div class="skill-item">
+                        <strong>📊 Data Viz</strong>
+                        <p>Advanced</p>
+                    </div>
+                    <div class="skill-item">
+                        <strong>☁️ Cloud Computing</strong>
+                        <p>Intermediate</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Current Work Experience -->
+        <div class="card timeline-card">
+            <h2 style="margin-bottom: 2rem;">Current Position</h2>
+            <div class="timeline-item">
+                <div class="timeline-date">2022 - Present</div>
+                <div class="timeline-title">Senior Data Scientist</div>
+                <div class="timeline-company">TechCorp Inc.</div>
+                <ul style="margin-top: 1rem;">
+                    <li>Lead a team of 4 data scientists in developing ML models for customer segmentation</li>
+                    <li>Implemented deep learning solutions that improved prediction accuracy by 35%</li>
+                    <li>Built automated data pipelines processing 10M+ records daily using Apache Spark</li>
+                    <li>Collaborated with product teams to deploy 15+ models into production</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Previous Work Experience -->
+        <div class="card timeline-card">
+            <h2 style="margin-bottom: 2rem;">Work Experience</h2>
+            <div class="timeline-item">
+                <div class="timeline-date">2020 - 2022</div>
+                <div class="timeline-title">Data Scientist</div>
+                <div class="timeline-company">DataViz Solutions</div>
+                <ul style="margin-top: 1rem;">
+                    <li>Developed predictive models for supply chain optimization</li>
+                    <li>Created interactive dashboards using Tableau and Power BI</li>
+                    <li>Reduced operational costs by 20% through data-driven insights</li>
+                </ul>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-date">2019 - 2020</div>
+                <div class="timeline-title">Junior Data Analyst</div>
+                <div class="timeline-company">StartupX</div>
+                <ul style="margin-top: 1rem;">
+                    <li>Performed statistical analysis on user behavior data</li>
+                    <li>Built A/B testing frameworks for product optimization</li>
+                    <li>Automated reporting processes saving 15 hours weekly</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Education -->
+        <div class="card">
+            <h2 style="margin-bottom: 2rem;">Education</h2>
+            <div class="education-item">
+                <div class="timeline-date">2017 - 2019</div>
+                <div class="timeline-title">Master of Science in Data Science</div>
+                <div class="timeline-company">Stanford University</div>
+                <p>Specialized in Machine Learning and Statistical Computing. Thesis: "Deep Learning Applications in Natural Language Processing"</p>
+            </div>
+            
+            <div class="education-item">
+                <div class="timeline-date">2013 - 2017</div>
+                <div class="timeline-title">Bachelor of Science in Computer Science</div>
+                <div class="timeline-company">UC Berkeley</div>
+                <p>Minor in Statistics. Graduated Magna Cum Laude. Relevant coursework: Algorithms, Database Systems, Statistical Methods</p>
+            </div>
+        </div>
+
+        <!-- Let's Connect -->
+        <div class="card connect-card">
+            <h2>Let's Connect!</h2>
+            <p>I'm always excited to discuss data science opportunities and collaborate on interesting projects.</p>
+            
+            <div class="social-links">
+                <a href="#" class="social-link">
+                    <span>💼</span>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="#" class="social-link">
+                    <span>🐱</span>
+                    <span>GitHub</span>
+                </a>
+                <a href="mailto:alex@example.com" class="social-link">
+                    <span>✉️</span>
+                    <span>Email</span>
+                </a>
+            </div>
+            
+            <button class="download-btn">
+                📄 Download Resume
+            </button>
+        </div>
+    </div>
+
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
